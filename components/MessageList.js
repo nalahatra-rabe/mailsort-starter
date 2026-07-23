@@ -1,12 +1,28 @@
-import MessageItem from "@/components/MessageItem";
+"use client";
 
-export default function MessageList({ messages }) {
+import { useRouter } from "next/navigation";
+import MessageItem from "@/components/MessageItem";
+import { CATEGORY_LABELS } from "@/components/constants";
+
+export default function MessageList({ messages, activeCategory }) {
+  const router = useRouter();
+
   return (
     <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
-      <div className="px-5 py-4 border-b border-slate-100">
+      <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
         <h2 className="font-semibold text-slate-800">
-          Messages ({messages.length})
+          {activeCategory
+            ? `${CATEGORY_LABELS[activeCategory] || activeCategory} (${messages.length})`
+            : `Messages (${messages.length})`}
         </h2>
+        {activeCategory && (
+          <button
+            onClick={() => router.push("/dashboard")}
+            className="text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
+          >
+            Réinitialiser
+          </button>
+        )}
       </div>
 
       <div className="divide-y divide-slate-100">
