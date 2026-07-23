@@ -1,31 +1,26 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import useDashboard from "@/hooks/useDashboard";
+import DashboardHeader from "@/components/DashboardHeader";
+import StatsGrid from "@/components/StatsGrid";
+import MessageList from "@/components/MessageList";
 
 export default function DashboardPage() {
-  const router = useRouter();
+  const { stats, messages, loading, handleLogout } = useDashboard();
 
-  function handleLogout() {
-    document.cookie = "token=; path=/; max-age=0; SameSite=Lax";
-    router.replace("/");
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-slate-400">Chargement…</p>
+      </div>
+    );
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4">
-          Bienvenue sur MailSort
-        </h1>
-        <p className="text-slate-500 mb-8">
-          Tableau de bord à construire.
-        </p>
-        <button
-          onClick={handleLogout}
-          className="bg-slate-200 hover:bg-slate-300 text-slate-700 font-medium py-2 px-4 rounded-lg text-sm transition-colors cursor-pointer"
-        >
-          Se déconnecter
-        </button>
-      </div>
+    <div className="max-w-5xl mx-auto px-4 py-8">
+      <DashboardHeader onLogout={handleLogout} />
+      <StatsGrid stats={stats} />
+      <MessageList messages={messages} />
     </div>
   );
 }
