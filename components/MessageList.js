@@ -25,11 +25,22 @@ export default function MessageList({ messages, activeCategory }) {
         )}
       </div>
 
-      <div className="divide-y divide-slate-100">
-        {messages.map((msg) => (
-          <MessageItem key={msg.id} message={msg} />
-        ))}
-      </div>
+      {messages.length === 0 ? (
+        <div className="px-5 py-12 text-center text-slate-400">
+          <p className="text-lg mb-1">Aucun message</p>
+          <p className="text-sm">
+            {activeCategory
+              ? "Aucun message dans cette catégorie."
+              : "Aucun message à afficher."}
+          </p>
+        </div>
+      ) : (
+        <div className="divide-y divide-slate-100">
+          {messages.map((msg) => (
+            <MessageItem key={msg.id} message={msg} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
