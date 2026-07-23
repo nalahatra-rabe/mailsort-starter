@@ -57,9 +57,44 @@ export default function useDashboard(category) {
     load();
   }, [load]);
 
+  async function updateCategory(messageId, newCategory) {
+    try {
+      const res = await fetch(`/api/messages/${messageId}/category`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ category: newCategory }),
+      });
+
+      if (res.status === 401) {
+        logout(router);
+        return;
+      }
+
+      if (!res.ok) return;
+
+      const { message: updated } = await res.json();
+
+      setMessages((prev) =>
+        prev.map((m) => (m.id === messageId ? { ...m, category: updated.category } : m)),
+      );
+
+      setStats((prev) => {
+        const oldCat = messages.find((m) => m.id === messageId)?.category;
+        if (!prev || !oldCat) return prev;
+
+        const next = { ...prev, byCategory: { ...prev.byCategory } };
+        next.byCategory[oldCat] = (next.byCategory[oldCat] || 1) - 1;
+        next.byCategory[newCategory] = (next.byCategory[newCategory] || 0) + 1;
+        return next;
+      });
+    } catch {
+      // silent
+    }
+  }
+
   function handleLogout() {
     logout(router);
   }
 
-  return { stats, messages, loading, error, handleLogout, retry: load };
+  return { stats, messages, loading, error, handleLogout, retry: load, updateCategory };
 }
