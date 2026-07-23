@@ -10,7 +10,8 @@ import MessageList from "@/components/MessageList";
 function DashboardContent() {
   const searchParams = useSearchParams();
   const activeCategory = searchParams.get("type") || null;
-  const { stats, messages, loading, handleLogout } = useDashboard(activeCategory);
+  const { stats, messages, loading, error, handleLogout, retry } =
+    useDashboard(activeCategory);
 
   if (loading) {
     return (
@@ -19,6 +20,24 @@ function DashboardContent() {
       </div>
     );
   }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen px-4">
+        <div className="text-center">
+          <p className="text-red-600 font-medium mb-2">{error}</p>
+          <button
+            onClick={retry}
+            className="text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
+          >
+            Réessayer
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!stats) return null;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
