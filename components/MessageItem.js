@@ -1,6 +1,12 @@
-import { CATEGORY_LABELS, CATEGORY_COLORS, formatDate } from "./constants";
+"use client";
 
-export default function MessageItem({ message }) {
+import { useState } from "react";
+import { CATEGORY_LABELS, CATEGORY_COLORS, formatDate } from "./constants";
+import CategoryDropdown from "./CategoryDropdown";
+
+export default function MessageItem({ message, onCategoryChange }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="px-5 py-4 hover:bg-slate-50">
       <div className="flex items-start justify-between gap-4">
@@ -15,14 +21,25 @@ export default function MessageItem({ message }) {
             {message.body}
           </p>
         </div>
-        <div className="flex flex-col items-end gap-2 shrink-0">
-          <span
-            className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+        <div className="flex flex-col items-end gap-2 shrink-0 relative">
+          <button
+            onClick={() => setOpen(!open)}
+            className={`text-xs font-medium px-2 py-0.5 rounded-full cursor-pointer ${
               CATEGORY_COLORS[message.category] || "bg-slate-100 text-slate-600"
             }`}
           >
             {CATEGORY_LABELS[message.category] || message.category}
-          </span>
+          </button>
+          {open && (
+            <CategoryDropdown
+              current={message.category}
+              onSelect={(cat) => {
+                setOpen(false);
+                onCategoryChange(message.id, cat);
+              }}
+              onClose={() => setOpen(false)}
+            />
+          )}
           <span className="text-xs text-slate-400">
             {formatDate(message.receivedAt)}
           </span>
