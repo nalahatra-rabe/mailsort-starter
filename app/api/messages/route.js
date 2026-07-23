@@ -10,7 +10,7 @@ export async function GET(request) {
   let result = getAllMessages();
 
   if (category) {
-    result = result.filter((m) => m.category.includes(category));
+    result = result.filter((m) => m.category === category);
   }
 
   result = [...result].sort(
