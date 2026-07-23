@@ -8,7 +8,7 @@ function logout(router) {
   router.replace("/");
 }
 
-export default function useDashboard() {
+export default function useDashboard(category) {
   const router = useRouter();
   const [stats, setStats] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -16,10 +16,16 @@ export default function useDashboard() {
 
   useEffect(() => {
     async function load() {
+      setLoading(true);
+
       try {
+        const messagesUrl = category
+          ? `/api/messages?category=${encodeURIComponent(category)}`
+          : "/api/messages";
+
         const [statsRes, messagesRes] = await Promise.all([
           fetch("/api/messages/stats"),
-          fetch("/api/messages"),
+          fetch(messagesUrl),
         ]);
 
         if (statsRes.status === 401 || messagesRes.status === 401) {
@@ -42,7 +48,7 @@ export default function useDashboard() {
     }
 
     load();
-  }, [router]);
+  }, [router, category]);
 
   function handleLogout() {
     logout(router);
