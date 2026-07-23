@@ -18,6 +18,16 @@ export const CATEGORY_COLORS = {
   interne: "bg-gray-100 text-gray-800",
 };
 
+export const VALID_CATEGORIES = [
+  "client",
+  "client-vip",
+  "reclamation-client",
+  "facture",
+  "newsletter",
+  "spam",
+  "interne",
+];
+
 export function formatDate(iso) {
   return new Intl.DateTimeFormat("fr-FR", {
     day: "numeric",
