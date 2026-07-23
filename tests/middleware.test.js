@@ -66,6 +66,22 @@ describe("middleware — /api/messages/* (token en en-tête)", () => {
 
     expect(NextResponse.next).toHaveBeenCalledOnce();
   });
+
+  it("laisse passer avec un token valide dans le cookie", async () => {
+    const token = await validToken();
+    await middleware(createRequest({ pathname: "/api/messages", cookieToken: token }));
+
+    expect(NextResponse.next).toHaveBeenCalledOnce();
+  });
+
+  it("retourne 401 si cookie token invalide", async () => {
+    await middleware(createRequest({ pathname: "/api/messages", cookieToken: "bad" }));
+
+    expect(NextResponse.json).toHaveBeenCalledWith(
+      { error: "Token invalide ou expiré" },
+      { status: 401 },
+    );
+  });
 });
 
 describe("middleware — / (page d'accueil)", () => {
