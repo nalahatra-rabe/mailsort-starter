@@ -15,34 +15,27 @@ export default function StatsGrid({ stats, activeCategory }) {
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-      <button
-        onClick={() => selectCategory(null)}
-        className="text-left cursor-pointer"
-      >
-        <StatCard
-          label="Total"
-          count={stats.total}
-          className={`transition-shadow hover:shadow-md ${
-            !activeCategory
-              ? "bg-blue-900 text-white ring-2 ring-blue-400"
-              : "bg-blue-900 text-white"
-          }`}
-        />
-      </button>
+      {[{ cat: null, label: "Total", count: stats.total }, ...Object.entries(stats.byCategory).map(([cat, count]) => ({ cat, label: CATEGORY_LABELS[cat] || cat, count }))].map(({ cat, label, count }) => {
+        const isActive = cat === activeCategory || (cat === null && !activeCategory);
 
-      {Object.entries(stats.byCategory).map(([cat, count]) => (
-        <button
-          key={cat}
-          onClick={() => selectCategory(cat)}
-          className="text-left cursor-pointer"
-        >
-          <StatCard
-            label={CATEGORY_LABELS[cat] || cat}
-            count={count}
-            className="bg-white border border-slate-200 text-slate-800 transition-shadow hover:shadow-md"
-          />
-        </button>
-      ))}
+        return (
+          <button
+            key={cat ?? "total"}
+            onClick={() => selectCategory(cat)}
+            className="text-left cursor-pointer"
+          >
+            <StatCard
+              label={label}
+              count={count}
+              className={`transition-shadow hover:shadow-md ${
+                isActive
+                  ? "bg-blue-900 text-white"
+                  : "bg-white border border-slate-200 text-slate-800"
+              }`}
+            />
+          </button>
+        );
+      })}
     </div>
   );
 }
