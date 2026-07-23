@@ -1,0 +1,410 @@
+[
+  {
+    "id": "msg-001",
+    "from": {
+      "name": "Jean Morel",
+      "email": "j.morel@axatis.fr"
+    },
+    "subject": "Question sur notre contrat de maintenance",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-02T18:17:00Z",
+    "category": "client",
+    "read": true
+  },
+  {
+    "id": "msg-031",
+    "from": {
+      "name": "IT Support",
+      "email": "it@mailsort.test"
+    },
+    "subject": "Mise à jour du VPN prévue jeudi",
+    "body": "Salut,\n\nPetit message d'information interne, voir détails ci-dessous. Merci de confirmer la bonne réception.\n\nA+",
+    "receivedAt": "2026-06-12T15:58:00Z",
+    "category": "interne",
+    "read": true
+  },
+  {
+    "id": "msg-030",
+    "from": {
+      "name": "Gabriel R.",
+      "email": "gabriel@mailsort.test"
+    },
+    "subject": "Rappel : entretiens annuels",
+    "body": "Salut,\n\nPetit message d'information interne, voir détails ci-dessous. Merci de confirmer la bonne réception.\n\nA+",
+    "receivedAt": "2026-06-30T07:46:00Z",
+    "category": "interne",
+    "read": false
+  },
+  {
+    "id": "msg-012",
+    "from": {
+      "name": "Patrick Vidal",
+      "email": "p.vidal@orma-distribution.fr"
+    },
+    "subject": "Réclamation : service indisponible depuis 48h",
+    "body": "Bonjour,\n\nNous rencontrons un problème sérieux et attendons une réponse rapide de votre part. Cette situation n'est pas acceptable en l'état.\n\nCordialement,",
+    "receivedAt": "2026-07-16T08:02:00Z",
+    "category": "reclamation-client",
+    "read": true
+  },
+  {
+    "id": "msg-023",
+    "from": {
+      "name": "Product Hunt",
+      "email": "digest@producthunt.com"
+    },
+    "subject": "Digest hebdo : les startups qui montent",
+    "body": "Au sommaire cette semaine : les actualités à ne pas manquer, nos sélections et les tendances du moment.\n\nPour vous désinscrire, cliquez ici.",
+    "receivedAt": "2026-06-26T12:14:00Z",
+    "category": "newsletter",
+    "read": true
+  },
+  {
+    "id": "msg-017",
+    "from": {
+      "name": "Facturation EDF",
+      "email": "noreply@edf.fr"
+    },
+    "subject": "Facture N°2026-0342",
+    "body": "Bonjour,\n\nVeuillez trouver votre document de facturation. Le règlement est attendu sous 30 jours.\n\nCordialement,\nLe service facturation",
+    "receivedAt": "2026-06-30T13:17:00Z",
+    "category": "facture",
+    "read": true
+  },
+  {
+    "id": "msg-013",
+    "from": {
+      "name": "Lucie Grangier",
+      "email": "l.grangier@sudfroid.fr"
+    },
+    "subject": "Insatisfaction suite à la dernière livraison",
+    "body": "Bonjour,\n\nNous rencontrons un problème sérieux et attendons une réponse rapide de votre part. Cette situation n'est pas acceptable en l'état.\n\nCordialement,",
+    "receivedAt": "2026-06-06T10:55:00Z",
+    "category": "reclamation-client",
+    "read": true
+  },
+  {
+    "id": "msg-033",
+    "from": {
+      "name": "Gabriel R.",
+      "email": "gabriel@mailsort.test"
+    },
+    "subject": "CR de la réunion de sprint",
+    "body": "Salut,\n\nPetit message d'information interne, voir détails ci-dessous. Merci de confirmer la bonne réception.\n\nA+",
+    "receivedAt": "2026-06-24T19:10:00Z",
+    "category": "interne",
+    "read": true
+  },
+  {
+    "id": "msg-011",
+    "from": {
+      "name": "Nadia Bencheikh",
+      "email": "n.bencheikh@keystone-corp.com"
+    },
+    "subject": "Invitation : séminaire partenaires stratégiques",
+    "body": "Bonjour,\n\nCe dossier est prioritaire pour notre direction. Merci de traiter dans les meilleurs délais.\n\nBien à vous,",
+    "receivedAt": "2026-06-06T15:18:00Z",
+    "category": "client-vip",
+    "read": false
+  },
+  {
+    "id": "msg-015",
+    "from": {
+      "name": "Facturation EDF",
+      "email": "noreply@edf.fr"
+    },
+    "subject": "Votre facture de février est disponible",
+    "body": "Bonjour,\n\nVeuillez trouver votre document de facturation. Le règlement est attendu sous 30 jours.\n\nCordialement,\nLe service facturation",
+    "receivedAt": "2026-06-24T12:13:00Z",
+    "category": "facture",
+    "read": false
+  },
+  {
+    "id": "msg-004",
+    "from": {
+      "name": "Sophie Lambert",
+      "email": "s.lambert@groupe-novex.com"
+    },
+    "subject": "Disponibilité pour un point téléphonique ?",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-15T15:38:00Z",
+    "category": "client",
+    "read": true
+  },
+  {
+    "id": "msg-007",
+    "from": {
+      "name": "Sophie Lambert",
+      "email": "s.lambert@groupe-novex.com"
+    },
+    "subject": "Précision sur la facturation de mars",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-07-15T13:21:00Z",
+    "category": "client",
+    "read": false
+  },
+  {
+    "id": "msg-010",
+    "from": {
+      "name": "Nadia Bencheikh",
+      "email": "n.bencheikh@keystone-corp.com"
+    },
+    "subject": "Renégociation du contrat cadre 2026",
+    "body": "Bonjour,\n\nCe dossier est prioritaire pour notre direction. Merci de traiter dans les meilleurs délais.\n\nBien à vous,",
+    "receivedAt": "2026-06-03T18:29:00Z",
+    "category": "client-vip",
+    "read": true
+  },
+  {
+    "id": "msg-014",
+    "from": {
+      "name": "Lucie Grangier",
+      "email": "l.grangier@sudfroid.fr"
+    },
+    "subject": "Erreur de facturation — demande de remboursement",
+    "body": "Bonjour,\n\nNous rencontrons un problème sérieux et attendons une réponse rapide de votre part. Cette situation n'est pas acceptable en l'état.\n\nCordialement,",
+    "receivedAt": "2026-06-18T14:40:00Z",
+    "category": "reclamation-client",
+    "read": false
+  },
+  {
+    "id": "msg-028",
+    "from": {
+      "name": "Crypto Milliardaire",
+      "email": "invest@cryptoboom.click"
+    },
+    "subject": "Vous avez GAGNÉ un iPhone 17 !!!",
+    "body": "FÉLICITATIONS !!! Vous êtes l'heureux gagnant. Cliquez vite sur le lien avant expiration de l'offre !!!",
+    "receivedAt": "2026-06-08T17:56:00Z",
+    "category": "spam",
+    "read": false
+  },
+  {
+    "id": "msg-009",
+    "from": {
+      "name": "Directeur Achats — Helios SA",
+      "email": "dg@helios-sa.fr"
+    },
+    "subject": "URGENT — Comité de direction vendredi",
+    "body": "Bonjour,\n\nCe dossier est prioritaire pour notre direction. Merci de traiter dans les meilleurs délais.\n\nBien à vous,",
+    "receivedAt": "2026-06-25T08:22:00Z",
+    "category": "client-vip",
+    "read": false
+  },
+  {
+    "id": "msg-006",
+    "from": {
+      "name": "Sophie Lambert",
+      "email": "s.lambert@groupe-novex.com"
+    },
+    "subject": "Accès à la plateforme pour un nouveau collaborateur",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-29T16:17:00Z",
+    "category": "client",
+    "read": true
+  },
+  {
+    "id": "msg-022",
+    "from": {
+      "name": "Next.js Weekly",
+      "email": "news@nextjs-weekly.dev"
+    },
+    "subject": "Top 10 des outils SaaS du mois",
+    "body": "Au sommaire cette semaine : les actualités à ne pas manquer, nos sélections et les tendances du moment.\n\nPour vous désinscrire, cliquez ici.",
+    "receivedAt": "2026-07-06T15:16:00Z",
+    "category": "newsletter",
+    "read": false
+  },
+  {
+    "id": "msg-025",
+    "from": {
+      "name": "PROMO INCROYABLE",
+      "email": "win@lotterie-gagnant.biz"
+    },
+    "subject": "Vous avez GAGNÉ un iPhone 17 !!!",
+    "body": "FÉLICITATIONS !!! Vous êtes l'heureux gagnant. Cliquez vite sur le lien avant expiration de l'offre !!!",
+    "receivedAt": "2026-06-10T17:10:00Z",
+    "category": "spam",
+    "read": false
+  },
+  {
+    "id": "msg-021",
+    "from": {
+      "name": "Product Hunt",
+      "email": "digest@producthunt.com"
+    },
+    "subject": "Cette semaine : Next 15.4 et React Compiler",
+    "body": "Au sommaire cette semaine : les actualités à ne pas manquer, nos sélections et les tendances du moment.\n\nPour vous désinscrire, cliquez ici.",
+    "receivedAt": "2026-06-30T09:16:00Z",
+    "category": "newsletter",
+    "read": true
+  },
+  {
+    "id": "msg-005",
+    "from": {
+      "name": "Marc Dubois",
+      "email": "m.dubois@teleor.fr"
+    },
+    "subject": "Renouvellement de l'abonnement annuel",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-13T18:41:00Z",
+    "category": "client",
+    "read": false
+  },
+  {
+    "id": "msg-018",
+    "from": {
+      "name": "Stripe",
+      "email": "receipts@stripe.com"
+    },
+    "subject": "Échéance à venir : prélèvement le 28",
+    "body": "Bonjour,\n\nVeuillez trouver votre document de facturation. Le règlement est attendu sous 30 jours.\n\nCordialement,\nLe service facturation",
+    "receivedAt": "2026-06-04T10:52:00Z",
+    "category": "facture",
+    "read": true
+  },
+  {
+    "id": "msg-026",
+    "from": {
+      "name": "Crypto Milliardaire",
+      "email": "invest@cryptoboom.click"
+    },
+    "subject": "Votre compte sera suspendu — vérifiez maintenant",
+    "body": "FÉLICITATIONS !!! Vous êtes l'heureux gagnant. Cliquez vite sur le lien avant expiration de l'offre !!!",
+    "receivedAt": "2026-06-05T13:24:00Z",
+    "category": "spam",
+    "read": false
+  },
+  {
+    "id": "msg-032",
+    "from": {
+      "name": "IT Support",
+      "email": "it@mailsort.test"
+    },
+    "subject": "Pot de départ de Sandrine vendredi",
+    "body": "Salut,\n\nPetit message d'information interne, voir détails ci-dessous. Merci de confirmer la bonne réception.\n\nA+",
+    "receivedAt": "2026-06-20T17:32:00Z",
+    "category": "interne",
+    "read": true
+  },
+  {
+    "id": "msg-034",
+    "from": {
+      "name": "IT Support",
+      "email": "it@mailsort.test"
+    },
+    "subject": "Rappel : entretiens annuels",
+    "body": "Salut,\n\nPetit message d'information interne, voir détails ci-dessous. Merci de confirmer la bonne réception.\n\nA+",
+    "receivedAt": "2026-06-21T14:01:00Z",
+    "category": "interne",
+    "read": true
+  },
+  {
+    "id": "msg-027",
+    "from": {
+      "name": "Crypto Milliardaire",
+      "email": "invest@cryptoboom.click"
+    },
+    "subject": "Multipliez vos gains par 100 en 7 jours",
+    "body": "FÉLICITATIONS !!! Vous êtes l'heureux gagnant. Cliquez vite sur le lien avant expiration de l'offre !!!",
+    "receivedAt": "2026-06-17T15:55:00Z",
+    "category": "spam",
+    "read": true
+  },
+  {
+    "id": "msg-003",
+    "from": {
+      "name": "Marc Dubois",
+      "email": "m.dubois@teleor.fr"
+    },
+    "subject": "Suivi de notre commande #4521",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-28T07:01:00Z",
+    "category": "client",
+    "read": true
+  },
+  {
+    "id": "msg-019",
+    "from": {
+      "name": "Stripe",
+      "email": "receipts@stripe.com"
+    },
+    "subject": "Votre facture de février est disponible",
+    "body": "Bonjour,\n\nVeuillez trouver votre document de facturation. Le règlement est attendu sous 30 jours.\n\nCordialement,\nLe service facturation",
+    "receivedAt": "2026-06-26T11:04:00Z",
+    "category": "facture",
+    "read": true
+  },
+  {
+    "id": "msg-029",
+    "from": {
+      "name": "IT Support",
+      "email": "it@mailsort.test"
+    },
+    "subject": "CR de la réunion de sprint",
+    "body": "Salut,\n\nPetit message d'information interne, voir détails ci-dessous. Merci de confirmer la bonne réception.\n\nA+",
+    "receivedAt": "2026-06-22T08:18:00Z",
+    "category": "interne",
+    "read": false
+  },
+  {
+    "id": "msg-008",
+    "from": {
+      "name": "Sophie Lambert",
+      "email": "s.lambert@groupe-novex.com"
+    },
+    "subject": "Question sur notre contrat de maintenance",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-14T19:21:00Z",
+    "category": "client",
+    "read": true
+  },
+  {
+    "id": "msg-002",
+    "from": {
+      "name": "Sophie Lambert",
+      "email": "s.lambert@groupe-novex.com"
+    },
+    "subject": "Demande de devis pour extension",
+    "body": "Bonjour,\n\nPourriez-vous revenir vers moi concernant l'objet de ce message ? Nous aimerions avancer rapidement.\n\nCordialement,",
+    "receivedAt": "2026-06-09T18:06:00Z",
+    "category": "client",
+    "read": true
+  },
+  {
+    "id": "msg-016",
+    "from": {
+      "name": "Comptabilité OVH",
+      "email": "billing@ovh.com"
+    },
+    "subject": "Reçu de paiement — abonnement mensuel",
+    "body": "Bonjour,\n\nVeuillez trouver votre document de facturation. Le règlement est attendu sous 30 jours.\n\nCordialement,\nLe service facturation",
+    "receivedAt": "2026-07-09T17:10:00Z",
+    "category": "facture",
+    "read": true
+  },
+  {
+    "id": "msg-020",
+    "from": {
+      "name": "Stripe",
+      "email": "receipts@stripe.com"
+    },
+    "subject": "Reçu de paiement — abonnement mensuel",
+    "body": "Bonjour,\n\nVeuillez trouver votre document de facturation. Le règlement est attendu sous 30 jours.\n\nCordialement,\nLe service facturation",
+    "receivedAt": "2026-06-14T17:31:00Z",
+    "category": "facture",
+    "read": false
+  },
+  {
+    "id": "msg-024",
+    "from": {
+      "name": "Product Hunt",
+      "email": "digest@producthunt.com"
+    },
+    "subject": "Cette semaine : Next 15.4 et React Compiler",
+    "body": "Au sommaire cette semaine : les actualités à ne pas manquer, nos sélections et les tendances du moment.\n\nPour vous désinscrire, cliquez ici.",
+    "receivedAt": "2026-07-02T08:48:00Z",
+    "category": "newsletter",
+    "read": true
+  }
+]
