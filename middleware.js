@@ -16,15 +16,18 @@ async function verifyToken(token) {
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  // API routes → vérifie l'en-tête Authorization
+  const cookieToken = request.cookies.get("token")?.value;
+
+  // API routes → Authorization header (externe) ou cookie (dashboard)
   if (pathname.startsWith("/api/messages")) {
     const authHeader = request.headers.get("authorization");
+    const token = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : cookieToken;
 
-    if (!authHeader?.startsWith("Bearer ")) {
+    if (!token) {
       return NextResponse.json({ error: "Authentification requise" }, { status: 401 });
     }
 
-    const valid = await verifyToken(authHeader.slice(7));
+    const valid = await verifyToken(token);
     if (!valid) {
       return NextResponse.json({ error: "Token invalide ou expiré" }, { status: 401 });
     }
@@ -33,7 +36,6 @@ export async function middleware(request) {
   }
 
   // Routes protégées → vérifie le cookie
-  const cookieToken = request.cookies.get("token")?.value;
   const isAuth = await verifyToken(cookieToken);
 
   // Dashboard → redirige vers / si non connecté
