@@ -14,6 +14,7 @@ export default function useDashboard(category) {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [updatingIds, setUpdatingIds] = useState(new Set());
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -58,6 +59,8 @@ export default function useDashboard(category) {
   }, [load]);
 
   async function updateCategory(messageId, newCategory) {
+    setUpdatingIds((prev) => new Set(prev).add(messageId));
+
     try {
       const res = await fetch(`/api/messages/${messageId}/category`, {
         method: "PATCH",
@@ -72,11 +75,18 @@ export default function useDashboard(category) {
 
       if (!res.ok) return;
 
-      const { message: updated } = await res.json();
+      setMessages((prev) => {
+        const oldCat = prev.find((m) => m.id === messageId)?.category;
+        if (!oldCat) return prev;
 
-      setMessages((prev) =>
-        prev.map((m) => (m.id === messageId ? { ...m, category: updated.category } : m)),
-      );
+        if (category && newCategory !== category) {
+          return prev.filter((m) => m.id !== messageId);
+        }
+
+        return prev.map((m) =>
+          m.id === messageId ? { ...m, category: newCategory } : m,
+        );
+      });
 
       setStats((prev) => {
         const oldCat = messages.find((m) => m.id === messageId)?.category;
@@ -89,6 +99,12 @@ export default function useDashboard(category) {
       });
     } catch {
       // silent
+    } finally {
+      setUpdatingIds((prev) => {
+        const next = new Set(prev);
+        next.delete(messageId);
+        return next;
+      });
     }
   }
 
@@ -96,5 +112,14 @@ export default function useDashboard(category) {
     logout(router);
   }
 
-  return { stats, messages, loading, error, handleLogout, retry: load, updateCategory };
+  return {
+    stats,
+    messages,
+    loading,
+    error,
+    updatingIds,
+    handleLogout,
+    retry: load,
+    updateCategory,
+  };
 }

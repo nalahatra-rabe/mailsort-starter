@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import MessageItem from "@/components/MessageItem";
 import { CATEGORY_LABELS } from "@/components/constants";
 
-export default function MessageList({ messages, activeCategory, onCategoryChange }) {
+export default function MessageList({ messages, activeCategory, onCategoryChange, updatingIds }) {
   const router = useRouter();
 
   return (
@@ -37,7 +37,12 @@ export default function MessageList({ messages, activeCategory, onCategoryChange
       ) : (
         <div className="divide-y divide-slate-100">
           {messages.map((msg) => (
-            <MessageItem key={msg.id} message={msg} onCategoryChange={onCategoryChange} />
+            <MessageItem
+              key={msg.id}
+              message={msg}
+              onCategoryChange={onCategoryChange}
+              updating={updatingIds.has(msg.id)}
+            />
           ))}
         </div>
       )}

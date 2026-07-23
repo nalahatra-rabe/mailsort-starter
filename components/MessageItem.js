@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CATEGORY_LABELS, CATEGORY_COLORS, formatDate } from "./constants";
 import CategoryDropdown from "./CategoryDropdown";
 
-export default function MessageItem({ message, onCategoryChange }) {
+export default function MessageItem({ message, onCategoryChange, updating }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -22,14 +22,21 @@ export default function MessageItem({ message, onCategoryChange }) {
           </p>
         </div>
         <div className="flex flex-col items-end gap-2 shrink-0 relative">
-          <button
-            onClick={() => setOpen(!open)}
-            className={`text-xs font-medium px-2 py-0.5 rounded-full cursor-pointer ${
-              CATEGORY_COLORS[message.category] || "bg-slate-100 text-slate-600"
-            }`}
-          >
-            {CATEGORY_LABELS[message.category] || message.category}
-          </button>
+          {updating ? (
+            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-400 inline-flex items-center gap-1.5">
+              <span className="inline-block w-3 h-3 border-2 border-slate-300 border-t-slate-500 rounded-full animate-spin" />
+              Modification…
+            </span>
+          ) : (
+            <button
+              onClick={() => setOpen(!open)}
+              className={`text-xs font-medium px-2 py-0.5 rounded-full cursor-pointer ${
+                CATEGORY_COLORS[message.category] || "bg-slate-100 text-slate-600"
+              }`}
+            >
+              {CATEGORY_LABELS[message.category] || message.category}
+            </button>
+          )}
           {open && (
             <CategoryDropdown
               current={message.category}

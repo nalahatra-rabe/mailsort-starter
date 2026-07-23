@@ -10,7 +10,7 @@ import MessageList from "@/components/MessageList";
 function DashboardContent() {
   const searchParams = useSearchParams();
   const activeCategory = searchParams.get("type") || null;
-  const { stats, messages, loading, error, handleLogout, retry, updateCategory } =
+  const { stats, messages, loading, error, updatingIds, handleLogout, retry, updateCategory } =
     useDashboard(activeCategory);
 
   if (loading) {
@@ -43,7 +43,7 @@ function DashboardContent() {
     <div className="max-w-5xl mx-auto px-4 py-8">
       <DashboardHeader onLogout={handleLogout} />
       <StatsGrid stats={stats} activeCategory={activeCategory} />
-      <MessageList messages={messages} activeCategory={activeCategory} onCategoryChange={updateCategory} />
+      <MessageList messages={messages} activeCategory={activeCategory} onCategoryChange={updateCategory} updatingIds={updatingIds} />
     </div>
   );
 }
